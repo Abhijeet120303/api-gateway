@@ -3,13 +3,13 @@ FROM openjdk:24-jdk-slim
 WORKDIR /app
 
 # Define build-time argument
-ARG jarName
+ARG imageName
 
 # Set environment variable from ARG
-ENV JAR_NAME=${jarName}
+ENV IMAGE_NAME=${imageName}
 
 # Copy Jar from build context to /app directory in the image
-COPY target/${JAR_NAME}.jar ${JAR_NAME}.jar
+COPY target/${IMAGE_NAME}.jar ${IMAGE_NAME}.jar
 
 # Set the entry point
-CMD ["sh", "-c", "java -jar /app/${JAR_NAME}.jar"]
+ENTRYPOINT ["sh", "-c", "java -jar /app/${IMAGE_NAME}.jar"]
