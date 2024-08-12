@@ -78,7 +78,7 @@
 							<build>
 								<dockerFile>${project.basedir}/dockerfile</dockerFile>
 								<args>
-									<jarName>${project.artifactId}-latest</jarName>
+									<imageName>${project.artifactId}-latest</imageName>
 								</args>
 							</build>
 						</image>
